@@ -37,7 +37,7 @@ Dashboard Pages & Key Findings
 
 ---
 
-## 🧮 DAX Measures
+DAX Measures
 
 ```DAX
 Total Patients        = COUNTROWS(Healthcare_Master)
@@ -75,7 +75,7 @@ Followup Completion Rate % = DIVIDE([Total Followup Completed], [Total Patients]
 
 ---
 
-## 🗂️ Data Dictionary (key columns)
+##  Data Dictionary (key columns)
 
 | Group | Columns |
 |-------|---------|
@@ -92,7 +92,7 @@ Followup Completion Rate % = DIVIDE([Total Followup Completed], [Total Patients]
 
 ---
 
-## 💡 Recommendations
+##  Recommendations
 
 - **Enforce follow-up for high-severity discharges.** Missed follow-up is associated with about 10–12 points higher readmission across all severity levels.
 - **Cut ER waiting time.** Waiting time has the strongest link to satisfaction in this data.
@@ -104,7 +104,7 @@ Followup Completion Rate % = DIVIDE([Total Followup Completed], [Total Patients]
 
 ---
 
-## 🚀 How to Use
+##  How to Use
 
 1. Clone the repo: `git clone https://github.com/chandupatibandla39/hospital-data-analysis-powerbi.git`
 2. Open `hospital_data_analysis.pbix` in **Power BI Desktop**.
@@ -112,7 +112,7 @@ Followup Completion Rate % = DIVIDE([Total Followup Completed], [Total Patients]
 
 ---
 
-## 📁 Repository Structure
+##  Repository Structure
 
 ```
 hospital-data-analysis-powerbi/
