@@ -1,13 +1,13 @@
-# 🏥 Hospital Data Analysis – Power BI Dashboard
+Hospital Data Analysis – Power BI Dashboard
 
-An end-to-end Power BI project analysing **3,000 patient records across 10 hospital departments** (Jan 2025 – May 2026). The report has 9 pages covering readmissions, mortality, ER delays, revenue, surgery cancellations, patient satisfaction, blood bank usage, diagnostic delay and follow-up compliance.
+An end-to-end Power BI project analysing 3,000 patient records across 10 hospital departments (Jan 2025 – May 2026). The report has 9 pages covering readmissions, mortality, ER delays, revenue, surgery cancellations, patient satisfaction, blood bank usage, diagnostic delay and follow-up compliance.
 
-> **Tools:** Power BI Desktop · DAX · Data Modelling · Data Visualization
-> **Dataset:** `Healthcare_Master` – 3,000 rows × 34 columns *(add source here, e.g. simulated / practice dataset)*
+> Tools: Power BI Desktop · DAX · Data Modelling · Data Visualization
+> Dataset: `Healthcare_Master` – 3,000 rows × 34 columns *(add source here, e.g. simulated / practice dataset)*
 
 ---
 
-## 🎯 Business Questions
+Business Questions
 
 1. Which departments and patients have the highest readmission rates, and does follow-up compliance matter?
 2. How does mortality vary by department and severity, and is diagnosis delay related to it?
@@ -21,7 +21,7 @@ An end-to-end Power BI project analysing **3,000 patient records across 10 hospi
 
 ---
 
-## 📊 Dashboard Pages & Key Findings
+Dashboard Pages & Key Findings
 
 | # | Page | Key Finding |
 |---|------|-------------|
