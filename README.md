@@ -1,132 +1,395 @@
-Hospital Data Analysis – Power BI Dashboard
+Hospital Data Analysis | Power BI Dashboard
 
-An end-to-end Power BI project analysing 3,000 patient records across 10 hospital departments (Jan 2025 – May 2026). The report has 9 pages covering readmissions, mortality, ER delays, revenue, surgery cancellations, patient satisfaction, blood bank usage, diagnostic delay and follow-up compliance.
+An end-to-end Healthcare Data Analytics Project developed using Microsoft Power BI to analyze 3,000 patient records across 10 hospital departments from January 2025 to May 2026.
 
-> Tools: Power BI Desktop · DAX · Data Modelling · Data Visualization
-> Dataset: `Healthcare_Master` – 3,000 rows × 34 columns *(add source here, e.g. simulated / practice dataset)*
+This project transforms hospital data into interactive dashboards to explore patient outcomes, operational efficiency, financial performance, emergency department delays, blood bank utilization, and patient satisfaction.
 
----
-
-Business Questions
-
-1. Which departments and patients have the highest readmission rates, and does follow-up compliance matter?
-2. How does mortality vary by department and severity, and is diagnosis delay related to it?
-3. How long do patients wait in the emergency room, and what drives it?
-4. How does treatment cost vary by department and insurance type?
-5. Why are surgeries cancelled, and which departments are most affected?
-6. What drives patient satisfaction?
-7. How efficiently is blood inventory used, and how much expires?
-8. Do doctor experience and number of tests affect diagnosis delay?
-9. Who completes follow-up visits, and who doesn't?
+The dashboard consists of **9 analytical pages and 30 DAX measures**, providing insights into hospital performance and potential areas for operational improvement.
 
 ---
 
-Dashboard Pages & Key Findings
+Project Overview
 
-| # | Page | Key Finding |
-|---|------|-------------|
-| 1 | **Readmission Analysis** | Overall readmission is **29.8%**. ICU (34.6%), Cardiology (34.3%) and Emergency (33.9%) are highest. Critical patients who missed follow-up were readmitted at **46.3% vs 34.2%** when follow-up was completed (~12 points higher). |
-| 2 | **Mortality** | Overall mortality is **13.6%**. Endocrinology (17.8%) and Emergency (15.7%) are highest; Pulmonology (10.7%) is lowest. |
-| 3 | **Emergency Delay** | Average wait is **75.7 minutes**, and **63.5%** of patients wait more than 55 minutes. Nephrology has the longest average wait (80.6 min). |
-| 4 | **Revenue Analysis** | Monthly revenue trend, average cost per patient by department and insurance type, and cost of surgery cases. |
-| 5 | **Surgery Cancellation** | **106 of 1,077** required surgeries were cancelled (**9.8%**). Top reasons: Equipment Shortage and Patient Unfit (26 each), then Doctor Unavailable (20). |
-| 6 | **Patient Satisfaction** | Average satisfaction is **2.23 / 5**. Longer waits go with lower satisfaction (**correlation ≈ -0.56**). Patients with a cancelled surgery score lower (1.97 vs 2.23). |
-| 7 | **Blood Bank** | **175,375** units available, **133,478** used (**76.1%**) and **20,721** expired (**11.8%**). |
-| 8 | **Diagnostic Error** | Patients who died had a longer average diagnosis delay (**39.2 h vs 34.8 h**). Doctor experience shows essentially no relationship with delay (r ≈ 0.00). |
-| 9 | **Follow-up Compliance** | **70%** of patients completed follow-up; breakdown by age group, city, insurance type and disease. |
+| Project Detail | Description |
+|---|---|
+| Project Name | Hospital Data Analysis |
+| Domain | Healthcare Analytics |
+| Dataset | Healthcare_Master |
+| Total Records | 3,000 |
+| Total Columns | 34 |
+| Departments | 10 |
+| Analysis Period | January 2025 – May 2026 |
+| Dashboard Pages | 9 |
+| DAX Measures | 30 |
+| Visualization Tool | Microsoft Power BI |
+
+Business Objectives
+
+The primary objective is to analyze hospital operations and identify meaningful patterns that can support data-driven decision-making.
+
+Key business questions:
+
+1. Which departments have the highest patient readmission rates?
+2. How does mortality vary across departments and severity levels?
+3. What is the average emergency room waiting time?
+4. How does treatment cost vary across departments and insurance types?
+5. What are the major reasons for surgery cancellations?
+6. How does waiting time relate to patient satisfaction?
+7. How efficiently is hospital blood inventory utilized?
+8. Is diagnosis delay associated with patient mortality?
+9. What is the hospital's follow-up completion rate?
 
 ---
 
-DAX Measures
+Tools & Technologies:
+
+ Microsoft Power BI Desktop – Interactive dashboard development.
+ Power Query– Data cleaning and transformation.
+- DAX– Calculated measures and KPI development.
+- Data Modelling – Organizing the analytical dataset.
+- Data Visualization – Charts, tables, slicers and KPI cards.
+- Data Analysis – Identifying trends, patterns and business insights.
+
+---
+
+ Dashboard Pages & Key Findings
+
+1. Readmission Analysis
+
+![Readmission Analysis](screenshots/01_readmission.png)
+
+Key Findings:
+- Overall readmission rate: 29.8%.
+- ICU has the highest readmission rate at 34.6%.
+- Cardiology: 34.3%.
+- Emergency: 33.9%.
+- Critical patients who missed follow-up had a 46.3% readmission rate compared with 34.2% among those who completed follow-up.
+
+Business Insight: Follow-up compliance is associated with lower readmission rates, particularly among critical patients.
+
+2. Mortality Analysis
+
+![Mortality Analysis](screenshots/02_mortality.png)
+
+Key Findings:
+- Overall mortality rate: 13.6%.
+- Endocrinology: 17.8%.
+- Emergency: 15.7%.
+- Nephrology: 14.4%.
+- Pulmonology: 10.7%.
+
+Business Insight: Mortality rates vary across departments and severity levels, highlighting areas for further clinical and operational investigation.
+
+3. Emergency Delay Analysis:
+
+![Emergency Delay](screenshots/03_emergency_delay.png)
+
+Key Findings:
+- Average emergency waiting time: 75.7 minutes.
+- 63.5% of patients wait more than 55 minutes.
+- Nephrology has the highest average waiting time at approximately 80.6 minutes.
+
+Business Insight: Emergency waiting times represent an important operational metric for evaluating patient flow and service efficiency.
+
+4. Revenue Analysis
+
+![Revenue Analysis](screenshots/04_revenue.png)
+
+Key Findings:
+- Analyzed monthly hospital revenue trends.
+- Compared average revenue per patient across departments.
+- Evaluated revenue distribution by insurance type.
+- Analyzed cancelled surgeries and associated treatment costs.
+
+Business Insight:Department-wise and insurance-wise revenue analysis can help identify financial performance patterns.
+
+ 5. Surgery Cancellation Analysis
+
+![Surgery Cancellation](screenshots/05_surgery_cancellation.png)
+
+Key Findings:
+- 1,077 surgeries were required.
+- 106 surgeries were cancelled.
+- Overall cancellation rate: 9.8%.
+- Equipment shortage: 26 cancellations.
+- Patient unfit: 26 cancellations.
+- Doctor unavailable: 20 cancellations.
+
+Business Insight:Equipment availability and patient readiness are important areas to investigate when reducing surgery cancellations.
+
+ 6. Patient Satisfaction Analysis
+
+![Patient Satisfaction](screenshots/06_patient_satisfaction.png)
+
+Key Findings:
+- Average patient satisfaction: 2.23 out of 5.
+- Waiting time and satisfaction have a negative correlation of approximately -0.56.
+- Patients with cancelled surgeries reported an average satisfaction score of 1.97 compared with 2.23 for patients without cancelled surgeries.
+
+**Business Insight:** Longer waiting times are associated with lower patient satisfaction, making waiting-time management an important improvement area.
+
+7. Blood Bank Analysis
+
+![Blood Bank Analysis](screenshots/07_blood_bank.png)
+
+Key Findings:
+- Total available blood units: 175,375.
+- Total used blood units: 133,478.
+- Blood usage rate: 76.1%.
+- Expired blood units: 20,721.
+- Blood expiry rate: 11.8%.
+
+Business Insight: Blood inventory monitoring and expiry management can help reduce wastage and improve resource utilization.
+
+ 8. Diagnostic Error Analysis
+
+![Diagnostic Error Analysis](screenshots/08_diagnostic_error.png)
+
+Key Findings:
+- Patients who died had an average diagnosis delay of 39.2 hours.
+- Patients who survived had an average diagnosis delay of 34.8 hours.
+- Analyzed diagnosis delay across hospital departments.
+- Examined the relationship between doctor experience and diagnosis delay.
+
+Business Insight: The observed difference in diagnosis delay highlights an area for further investigation. Association does not establish causation.
+
+ 9. Follow-up Compliance Analysis
+
+![Follow-up Compliance](screenshots/09_followup_compliance.png)
+
+Key Findings:
+- Overall follow-up completion rate: 70%.
+- Analyzed follow-up completion by disease.
+- Compared compliance across age groups.
+- Evaluated completion rates by city and insurance type.
+
+Business Insight: Follow-up compliance analysis can help identify patient groups and departments that may benefit from improved follow-up processes.
+
+---
+
+ 🧮 DAX Measures & KPIs
+
+The project includes 30 DAX measures for calculating operational and clinical performance indicators.
+
+Some important measures include:
+
+ Patient Analysis
 
 ```DAX
-Total Patients        = COUNTROWS(Healthcare_Master)
-Total Readmitted      = CALCULATE(COUNTROWS(Healthcare_Master), Healthcare_Master[Readmitted] = "Yes")
-Readmission Rate %    = DIVIDE([Total Readmitted], [Total Patients], 0)
+Total Patients =
+COUNTROWS(Healthcare_Master)
 
-Total Mortality       = CALCULATE(COUNTROWS(Healthcare_Master), Healthcare_Master[Mortality] = "Yes")
-Mortality Rate %      = DIVIDE([Total Mortality], [Total Patients], 0)
+Total Readmitted =
+CALCULATE(
+    COUNTROWS(Healthcare_Master),
+    Healthcare_Master[Readmitted] = "Yes"
+)
 
-Average Wait Time     = AVERAGE(Healthcare_Master[Waiting_Time_Minutes])
-Long Wait Patients    = CALCULATE(COUNTROWS(Healthcare_Master), Healthcare_Master[Waiting_Time_Minutes] > 55)
-Long Wait Rate %      = DIVIDE([Long Wait Patients], [Total Patients], 0)
-
-Total Revenue         = SUM(Healthcare_Master[Treatment_Cost])
-Average Revenue per Patient = AVERAGE(Healthcare_Master[Treatment_Cost])
-
-Surgeries Required    = CALCULATE(COUNTROWS(Healthcare_Master), Healthcare_Master[Surgery_Required] = "Yes")
-Cancelled Surgeries   = CALCULATE(COUNTROWS(Healthcare_Master), Healthcare_Master[Surgery_Cancelled] = "Yes")
-Cancellation Rate %   = DIVIDE([Cancelled Surgeries], [Surgeries Required], 0)
-
-Average Satisfaction  = AVERAGE(Healthcare_Master[Satisfaction_Score])
-
-Usage Rate %          = DIVIDE([Total Used], [Total Available], 0)
-Expiry Rate %         = DIVIDE([Total Expired], [Total Available], 0)
-Shortfall             = [Total Available] - [Total Used]
-
-Average Diagnosis Delay = AVERAGE(Healthcare_Master[Diagnosis_Delay_Hours])
-Avg Delay - Mortality Yes = CALCULATE([Average Diagnosis Delay], Healthcare_Master[Mortality] = "Yes")
-Avg Delay - Mortality No  = CALCULATE([Average Diagnosis Delay], Healthcare_Master[Mortality] = "No")
-
-Followup Completion Rate % = DIVIDE([Total Followup Completed], [Total Patients], 0)
+Readmission Rate % =
+DIVIDE(
+    [Total Readmitted],
+    [Total Patients],
+    0
+)
 ```
 
-*(Supporting sum measures for blood units and follow-up counts are included in the `.pbix`.)*
+ Mortality Analysis
 
----
+```DAX
+Total Mortality =
+CALCULATE(
+    COUNTROWS(Healthcare_Master),
+    Healthcare_Master[Mortality] = "Yes"
+)
 
-##  Data Dictionary (key columns)
-
-| Group | Columns |
-|-------|---------|
-| Patient | `Patient_ID`, `Age`, `Gender`, `City`, `Disease`, `Age Group` (derived) |
-| Admission | `Department`, `Admission_Date`, `Discharge_Date`, `Stay_Days`, `Severity_Level` |
-| Clinical | `Oxygen_Level`, `Blood_Pressure`, `Heart_Rate`, `Tests_Done`, `Diagnosis_Delay_Hours` |
-| Doctor | `Doctor_ID`, `Doctor_Experience_Years` |
-| Operations | `Waiting_Time_Minutes`, `Insurance_Type`, `Treatment_Cost`, `Satisfaction_Score` |
-| Surgery | `Surgery_Required`, `Surgery_Cancelled`, `Cancellation_Reason` |
-| Blood bank | `Blood_Group`, `Blood_Units_Available`, `Blood_Units_Used`, `Blood_Units_Expired`, `Emergency_Blood_Request` |
-| Outcomes | `Followup_Completed`, `Previous_Revisit`, `Readmitted`, `Mortality` |
-
-**Data quality notes:** `Doctor_ID` (45), `Diagnosis_Delay_Hours` (50) and `Treatment_Cost` (70) contain missing values. *(Add how you handled them.)*
-
----
-
-##  Recommendations
-
-- **Enforce follow-up for high-severity discharges.** Missed follow-up is associated with about 10–12 points higher readmission across all severity levels.
-- **Cut ER waiting time.** Waiting time has the strongest link to satisfaction in this data.
-- **Fix equipment availability.** It is the joint top cause of surgery cancellations.
-- **Reduce blood expiry.** About 1 in 9 units expires; rebalance stock by blood group.
-- **Look at diagnosis delay in high-mortality departments.**
-
-> Findings show association, not proven causation.
-
----
-
-##  How to Use
-
-1. Clone the repo: `git clone https://github.com/chandupatibandla39/hospital-data-analysis-powerbi.git`
-2. Open `hospital_data_analysis.pbix` in **Power BI Desktop**.
-3. Use the slicers (Department, Severity, Insurance Type, Blood Group, Age Group) to explore.
-
----
-
-##  Repository Structure
-
-```
-hospital-data-analysis-powerbi/
-├── hospital_data_analysis.pbix
-├── dashboard_preview.pdf
-├── screenshots/
-│   ├── 01_readmission.png
-│   └── ...
-└── README.md
+Mortality Rate % =
+DIVIDE(
+    [Total Mortality],
+    [Total Patients],
+    0
+)
 ```
 
+ Emergency Waiting Time
+
+```DAX
+Average Wait Time =
+AVERAGE(
+    Healthcare_Master[Waiting_Time_Minutes]
+)
+
+Long Wait Patients =
+CALCULATE(
+    COUNTROWS(Healthcare_Master),
+    Healthcare_Master[Waiting_Time_Minutes] > 55
+)
+
+Long Wait Rate % =
+DIVIDE(
+    [Long Wait Patients],
+    [Total Patients],
+    0
+)
+```
+
+ Surgery Cancellation
+
+```DAX
+Surgeries Required =
+CALCULATE(
+    COUNTROWS(Healthcare_Master),
+    Healthcare_Master[Surgery_Required] = "Yes"
+)
+
+Cancelled Surgeries =
+CALCULATE(
+    COUNTROWS(Healthcare_Master),
+    Healthcare_Master[Surgery_Cancelled] = "Yes"
+)
+
+Cancellation Rate % =
+DIVIDE(
+    [Cancelled Surgeries],
+    [Surgeries Required],
+    0
+)
+```
+
+ Patient Satisfaction
+
+```DAX
+Average Satisfaction =
+AVERAGE(
+    Healthcare_Master[Satisfaction_Score]
+)
+```
+
+ Diagnosis Delay
+
+```DAX
+Average Diagnosis Delay =
+AVERAGE(
+    Healthcare_Master[Diagnosis_Delay_Hours]
+)
+
+Avg Delay - Mortality Yes =
+CALCULATE(
+    [Average Diagnosis Delay],
+    Healthcare_Master[Mortality] = "Yes"
+)
+
+Avg Delay - Mortality No =
+CALCULATE(
+    [Average Diagnosis Delay],
+    Healthcare_Master[Mortality] = "No"
+)
+```
+
+*Additional measures for blood inventory, follow-up compliance, revenue and other KPIs are included in the Power BI file.*
+
 ---
 
-## 👤 Author
+ Dataset & Data Quality
 
-**Purna Chandra Sekhar Patibandla**
-[LinkedIn](https://www.linkedin.com/in/purna-chandra-sekhar-patibandla) · [GitHub](https://github.com/chandupatibandla39) · chandupatibandla39@gmail.com
+The analytical dataset contains 3,000 records and 34 columns.
+
+Key data categories:
+
+| Category | Important Columns |
+|---|---|
+| Patient Information | Patient_ID, Age, Gender, City |
+| Admission | Department, Admission_Date, Discharge_Date, Stay_Days |
+| Clinical | Oxygen_Level, Blood_Pressure, Heart_Rate |
+| Doctor | Doctor_ID, Doctor_Experience_Years |
+| Operations | Waiting_Time_Minutes, Insurance_Type, Treatment_Cost |
+| Surgery | Surgery_Required, Surgery_Cancelled, Cancellation_Reason |
+| Blood Bank | Blood_Group, Blood_Units_Available, Blood_Units_Used, Blood_Units_Expired |
+| Patient Outcomes | Followup_Completed, Readmitted, Mortality |
+
+Data quality observations:
+
+- Doctor_ID: 45 missing values.
+- Diagnosis_Delay_Hours: 50 missing values.
+- Treatment_Cost: 70 missing values.
+
+Missing values should be considered when interpreting measures involving these fields. No imputation method is claimed in this documentation.
+
+Dataset source: Add the actual dataset origin here. Clearly identify whether it is a simulated, practice or real anonymized dataset before publication.
+
+---
+
+ Business Recommendations:
+
+Based on the analysis:
+
+1. Monitor readmission rates across high-readmission departments.
+2. Improve follow-up tracking, particularly for high-severity patients.
+3. Investigate long emergency waiting times and patient flow.
+4. Review equipment availability and surgery cancellation patterns.
+5. Improve blood inventory management to reduce expiry.
+6. Monitor patient satisfaction and waiting-time trends.
+7. Investigate diagnosis delays in departments with higher observed mortality rates.
+
+These are analytical recommendations based on observed patterns, not proof of causal relationships or clinical conclusions.*
+
+---
+
+GitHub Repository Structure:
+
+
+Hospital-Data-analysis-Powerbi/
+README.md
+hospital data analysis.pbi
+hospital data analysis.pdf
+screenshots/
+    01_readmission.png
+    02_mortality.png
+    03_emergency_delay.png
+    04_revenue.png
+    05_surgery_cancellation.png
+    06_patient_satisfaction.png
+    07_blood_bank.png
+    08_diagnostic_error.png
+   09_followup_compliance.png
+
+
+ How to Explore the Project
+
+1. Download the Power BI `.pbix` file from this repository.
+2. Open it using Microsoft Power BI Desktop.
+3. Explore all nine dashboard pages.
+4. Interact with the available department, severity, age group, insurance and blood group filters.
+5. Review the PDF report for a static version of the dashboard.
+
+
+
+ Skills Demonstrated
+
+- Data Analysis
+- Data Cleaning
+- Data Transformation
+- Data Modelling
+- DAX Calculations
+- KPI Development
+- Business Intelligence
+- Interactive Dashboard Development
+- Analytical Thinking
+- Data-driven Decision Making
+
+
+
+Author:
+
+Purna Chandra Sekhar Patibandla
+
+Aspiring Data Analyst | Power BI | SQL | Excel | Python
+
+LinkedIn: https://www.linkedin.com/in/purna-chandra-sekhar-patibandla
+
+GitHub: https://github.com/chandupatibandla39
+Email: chandupatibandla39@gmail.com
+
+
+If you find this project interesting, feel free to explore the dashboards and share your feedback.
+
+Thank you for visiting my Hospital Data Analysis project!
